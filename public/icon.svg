@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" fill="none">
+  <rect width="512" height="512" rx="128" fill="#15803d"/>
+  <circle cx="256" cy="256" r="210" stroke="#86efac" stroke-width="14" stroke-dasharray="24 16"/>
+  <!-- Recycling Arrows -->
+  <path d="M256 100 L300 160 H212 Z" fill="#f59e0b"/>
+  <path d="M380 340 L340 400 L300 340 Z" fill="#f59e0b" transform="rotate(120 340 370)"/>
+  <path d="M132 340 L172 400 L212 340 Z" fill="#f59e0b" transform="rotate(240 172 370)"/>
+  <!-- Rupee Symbol in Center -->
+  <text x="50%" y="58%" text-anchor="middle" font-family="system-ui, sans-serif" font-weight="900" font-size="210" fill="#ffffff">₹</text>
+</svg>

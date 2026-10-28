@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RaddiBhaav - Offline Mode</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background-color: #f8fafc;
+      color: #0f172a;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      padding: 1.5rem;
+      text-align: center;
+    }
+    .card {
+      background: #ffffff;
+      border: 1px solid #e2e8f0;
+      border-radius: 1.5rem;
+      padding: 2rem 1.5rem;
+      max-width: 440px;
+      width: 100%;
+      box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05);
+    }
+    .icon-badge {
+      width: 4rem;
+      height: 4rem;
+      background: #ecfdf5;
+      color: #059669;
+      border-radius: 1rem;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 1.25rem;
+    }
+    h1 {
+      font-size: 1.35rem;
+      font-weight: 800;
+      color: #0f172a;
+      margin-bottom: 0.5rem;
+    }
+    p {
+      font-size: 0.875rem;
+      color: #64748b;
+      line-height: 1.5;
+      margin-bottom: 1rem;
+    }
+    .hindi-text {
+      color: #334155;
+      font-size: 0.85rem;
+      margin-bottom: 0.75rem;
+    }
+    .marathi-text {
+      color: #475569;
+      font-size: 0.85rem;
+      margin-bottom: 1.5rem;
+    }
+    .status-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: #fef3c7;
+      color: #92400e;
+      border: 1px solid #fde68a;
+      padding: 0.35rem 0.85rem;
+      border-radius: 9999px;
+      font-size: 0.75rem;
+      font-weight: 700;
+      margin-bottom: 1.25rem;
+    }
+    .pulse-dot {
+      width: 0.5rem;
+      height: 0.5rem;
+      background: #f59e0b;
+      border-radius: 50%;
+      animation: pulse 1.5s infinite;
+    }
+    @keyframes pulse {
+      0% { opacity: 0.4; transform: scale(0.9); }
+      50% { opacity: 1; transform: scale(1.2); }
+      100% { opacity: 0.4; transform: scale(0.9); }
+    }
+    .btn {
+      display: inline-block;
+      width: 100%;
+      background: #15803d;
+      color: #ffffff;
+      font-weight: 700;
+      font-size: 0.875rem;
+      padding: 0.85rem 1.25rem;
+      border-radius: 0.875rem;
+      text-decoration: none;
+      border: none;
+      cursor: pointer;
+      min-height: 48px;
+    }
+    .btn:hover { background: #166534; }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <div class="icon-badge">
+      <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M1 1l22 22"/>
+        <path d="M16.72 11.06A10.94 10.94 0 0 1 19 12.55"/>
+        <path d="M5 12.55a10.94 10.94 0 0 1 5.17-2.39"/>
+        <path d="M10.71 5.05A16 16 0 0 1 22.58 9"/>
+        <path d="M1.42 9a15.91 15.91 0 0 1 4.7-2.88"/>
+        <path d="M8.53 16.11a6 6 0 0 1 6.95 0"/>
+        <line x1="12" y1="20" x2="12.01" y2="20"/>
+      </svg>
+    </div>
+
+    <div class="status-pill">
+      <div class="pulse-dot"></div>
+      <span>Offline Queue Ready • सुरक्षित ऑफ़लाइन</span>
+    </div>
+
+    <h1>You are Currently Offline</h1>
+    <p>
+      Patchy mobile connection detected. Your submitted scrap offers, weigh-ins, and listings are safely stored on your phone and will auto-sync as soon as your internet reconnects.
+    </p>
+
+    <p class="hindi-text">
+      <strong>नेटवर्क नहीं है:</strong> चिंता न करें, आपकी बोलियां और कबाड़ रिक्वेस्ट फोन में सुरक्षित हैं. इंटरनेट चालू होते ही अपने आप सिंक हो जाएंगी.
+    </p>
+
+    <p class="marathi-text">
+      <strong>इंटरनेट बंद आहे:</strong> तुमचे भंगार दर आणि नोंदी फोनमध्ये सुरक्षित सेव्ह आहेत. नेटवर्क येताच सर्व माहिती आपोआप अपडेट होईल.
+    </p>
+
+    <button class="btn" onclick="window.location.reload()">
+      Retry Connection (पुनः प्रयास / पुन्हा प्रयत्न)
+    </button>
+  </div>
+</body>
+</html>
