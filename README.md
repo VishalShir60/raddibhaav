@@ -252,9 +252,8 @@ We welcome contributions from developers, designers, and recycling enthusiasts!
 
 ## 👨‍💻 Credits
 
-Designed and developed by **[Vishal Shirsath](https://www.linkedin.com/in/vishal-shirsath-6138792ab)** (Founder & Developer).
+Designed and developed by **[Vishal Shirsath](https://www.linkedin.com/in/vishal-shirsath-6138792ab)**
 
-* **Founder & Developer**: Vishal Shirsath
 * **LinkedIn**: [vishal-shirsath-6138792ab](https://www.linkedin.com/in/vishal-shirsath-6138792ab)
 * **GitHub**: [@VishalShir60](https://github.com/VishalShir60)
 * **Location**: Nashik, Maharashtra, India
