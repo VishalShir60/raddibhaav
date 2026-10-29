@@ -1,6 +1,7 @@
 'use client';
 
 import { useEffect } from 'react';
+import Link from 'next/link';
 import { captureException } from '@/lib/monitoring/sentry';
 
 export default function GlobalError({
@@ -39,12 +40,12 @@ export default function GlobalError({
             >
               Try again
             </button>
-            <a
+            <Link
               href="/"
               className="px-5 py-2.5 border border-[#E8E4DA] rounded-[14px] font-semibold text-sm hover:bg-[#FAF8F3] transition-colors"
             >
               Go home
-            </a>
+            </Link>
           </div>
         </div>
       </body>

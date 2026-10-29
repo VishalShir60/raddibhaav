@@ -17,7 +17,7 @@ import {
   LogIn,
   Sun,
   Moon,
-  ShieldCheck
+  Info
 } from 'lucide-react';
 
 export function Header() {
@@ -31,10 +31,15 @@ export function Header() {
   const { user, profile } = useAuth();
 
   useEffect(() => {
-    try {
-      const isDark = document.documentElement.classList.contains('dark');
-      setIsDarkMode(isDark);
-    } catch (_) {}
+    const frame = requestAnimationFrame(() => {
+      try {
+        const isDark = document.documentElement.classList.contains('dark');
+        setIsDarkMode(isDark);
+      } catch {
+        // ignore in environments without DOM
+      }
+    });
+    return () => cancelAnimationFrame(frame);
   }, []);
 
   const toggleDarkMode = () => {
@@ -131,6 +136,17 @@ export function Header() {
           >
             <Store className="w-4 h-4" />
             {t('nav.dealerHub')}
+          </Link>
+          <Link
+            href="/about"
+            className={`px-3.5 py-2 rounded-xl transition-all flex items-center gap-1.5 ${
+              pathname === '/about' 
+                ? 'text-primary dark:text-accent bg-primary-tint/60 font-bold' 
+                : 'hover:text-text hover:bg-muted-bg/50'
+            }`}
+          >
+            <Info className="w-4 h-4" />
+            {t('nav.about')}
           </Link>
         </nav>
 
@@ -298,6 +314,14 @@ export function Header() {
             >
               <Store className="w-4 h-4 text-primary dark:text-accent" />
               {t('nav.dealerHub')}
+            </Link>
+            <Link
+              href="/about"
+              onClick={() => setMobileMenuOpen(false)}
+              className="flex items-center gap-2 px-3 py-2.5 rounded-xl text-text font-semibold hover:bg-muted-bg"
+            >
+              <Info className="w-4 h-4 text-muted" />
+              {t('nav.about')}
             </Link>
           </div>
 

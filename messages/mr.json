@@ -14,7 +14,8 @@
     "language": "भाषा",
     "selectRole": "भूमिका निवडा",
     "sellerRole": "कुटुंब / विक्रेता",
-    "dealerRole": "भंगारवाला / डीलर"
+    "dealerRole": "भंगारवाला / डीलर",
+    "about": "आमच्याबद्दल"
   },
   "hero": {
     "title": "भंगाराचा योग्य भाव (Kabadi ka sahi bhaav). कवडीमोल भावात रद्दी विकू नका!",
@@ -379,5 +380,14 @@
     "listingsPerDay": "दैनंदिन नोंदण्या (सरासरी)",
     "bidSpread": "सरासरी बोलीतील फरक (किमान वि कमाल)",
     "commissionWaived": "MVP मधील माफ केलेले कमिशन"
+  },
+  "footer": {
+    "allRightsReserved": "सर्व हक्क राखीव.",
+    "designedAndDevelopedBy": "संकल्पना व निर्मिती:",
+    "madeInNashik": "नाशिक, भारत येथे निर्मित",
+    "about": "आमच्याबद्दल",
+    "marketplace": "मार्केटप्लेस",
+    "dealerPartners": "डीलर पार्टनर्स",
+    "trustAndLegal": "विश्वास व कायदेशीर अटी"
   }
 }

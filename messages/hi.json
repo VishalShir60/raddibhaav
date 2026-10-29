@@ -14,7 +14,8 @@
     "language": "भाषा",
     "selectRole": "भूमिका चुनें",
     "sellerRole": "परिवार / विक्रेता",
-    "dealerRole": "कबाड़ीवाला / डीलर"
+    "dealerRole": "कबाड़ीवाला / डीलर",
+    "about": "परिचय"
   },
   "hero": {
     "title": "कबाड़ी का सही भाव. कौड़ियों के दाम न बेचें अपनी रद्दी!",
@@ -379,5 +380,14 @@
     "listingsPerDay": "अनुरोध / दिन (औसत)",
     "bidSpread": "औसत बोली अंतर (न्यूनतम बनाम अधिकतम)",
     "commissionWaived": "MVP में माफ किया गया कमीशन"
+  },
+  "footer": {
+    "allRightsReserved": "सर्वाधिकार सुरक्षित।",
+    "designedAndDevelopedBy": "डिज़ाइन एवं निर्माण:",
+    "madeInNashik": "नाशिक, भारत में निर्मित",
+    "about": "रद्दीभाव के बारे में",
+    "marketplace": "मार्केटप्लेस",
+    "dealerPartners": "डीलर पार्टनर्स",
+    "trustAndLegal": "भरोसा व कानूनी नीतियां"
   }
 }

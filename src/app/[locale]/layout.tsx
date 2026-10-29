@@ -11,6 +11,7 @@ import { MockNoticeBanner } from '@/components/common/MockNoticeBanner';
 import { OfflineSyncBanner } from '@/components/common/OfflineSyncBanner';
 import { AuthProvider } from '@/lib/auth/AuthContext';
 import { Analytics } from '@vercel/analytics/react';
+import { SITE_CONFIG } from '@/lib/site-config';
 import '../globals.css';
 
 const fraunces = Fraunces({
@@ -36,6 +37,9 @@ export const metadata: Metadata = {
   title: 'RaddiBhaav - Hyperlocal Scrap Marketplace',
   description: 'Kabadi ka sahi bhaav! Upload scrap photos & weight. Verified nearby kabadiwalas submit competing bids. Pick the best offer, dealer weighs at your doorstep, and pays directly via Cash or UPI.',
   applicationName: 'RaddiBhaav',
+  authors: [{ name: SITE_CONFIG.creator.name, url: SITE_CONFIG.links.linkedin }],
+  creator: SITE_CONFIG.creator.name,
+  publisher: SITE_CONFIG.name,
   manifest: '/manifest.json',
   icons: {
     icon: '/icon.svg',
@@ -98,7 +102,35 @@ export default async function LocaleLayout({
         <link rel="icon" href="/icon.svg" type="image/svg+xml" />
         <meta name="apple-mobile-web-app-capable" content="yes" />
         <meta name="apple-mobile-web-app-status-bar-style" content="default" />
-        <meta name="apple-mobile-web-app-title" content="RaddiBhaav" />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              '@context': 'https://schema.org',
+              '@type': 'Organization',
+              name: SITE_CONFIG.name,
+              legalName: SITE_CONFIG.legalName,
+              url: SITE_CONFIG.url,
+              logo: `${SITE_CONFIG.url}/icon.svg`,
+              description: SITE_CONFIG.description,
+              address: {
+                '@type': 'PostalAddress',
+                addressLocality: SITE_CONFIG.city,
+                addressCountry: 'India',
+              },
+              founder: {
+                '@type': 'Person',
+                name: SITE_CONFIG.creator.name,
+                jobTitle: SITE_CONFIG.creator.role,
+                url: SITE_CONFIG.links.linkedin,
+                sameAs: [
+                  SITE_CONFIG.links.linkedin,
+                  SITE_CONFIG.links.github,
+                ],
+              },
+            }),
+          }}
+        />
         <script
           dangerouslySetInnerHTML={{
             __html: `

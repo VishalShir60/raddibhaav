@@ -16,7 +16,6 @@ import {
   Banknote, 
   Scale, 
   CheckCircle2, 
-  TrendingUp, 
   Recycle,
   Award,
   Store,

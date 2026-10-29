@@ -1,19 +1,25 @@
 'use client';
 
+import { useTranslations } from 'next-intl';
 import { Link } from '@/i18n/routing';
 import { 
-  Recycle,
+  Recycle, 
   ShieldCheck, 
   Banknote, 
-  Scale,
-  Sparkles,
-  ArrowUpRight
+  Scale, 
+  Sparkles, 
+  ArrowUpRight 
 } from 'lucide-react';
+import { SITE_CONFIG } from '@/lib/site-config';
+import { LinkedInIcon, GitHubIcon } from '@/components/common/SocialIcons';
 
 export function Footer() {
+  const t = useTranslations('footer');
+  const currentYear = new Date().getFullYear();
+
   return (
     <footer className="w-full bg-surface dark:bg-[#06120D] text-text border-t border-border mt-auto transition-colors">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:py-16">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-12 pb-28 md:py-16">
         {/* 3 Pillars Trust Bar */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 pb-12 border-b border-border">
           <div className="card-premium p-6 flex items-start gap-4">
@@ -76,7 +82,7 @@ export function Footer() {
 
           {/* Marketplace Links */}
           <div className="space-y-3">
-            <h5 className="text-xs font-bold uppercase tracking-wider text-muted">Marketplace</h5>
+            <h5 className="text-xs font-bold uppercase tracking-wider text-muted">{t('marketplace')}</h5>
             <ul className="space-y-2 text-xs font-medium">
               <li>
                 <Link href="/sell" className="text-text hover:text-primary dark:hover:text-accent transition-colors flex items-center gap-1">
@@ -104,7 +110,7 @@ export function Footer() {
 
           {/* Dealer Partners */}
           <div className="space-y-3">
-            <h5 className="text-xs font-bold uppercase tracking-wider text-muted">Dealer Partners</h5>
+            <h5 className="text-xs font-bold uppercase tracking-wider text-muted">{t('dealerPartners')}</h5>
             <ul className="space-y-2 text-xs font-medium">
               <li>
                 <Link href="/dealer" className="text-text hover:text-primary dark:hover:text-accent transition-colors flex items-center gap-1">
@@ -130,10 +136,16 @@ export function Footer() {
             </ul>
           </div>
 
-          {/* Legal & Compliance */}
+          {/* Trust, About & Legal */}
           <div className="space-y-3">
-            <h5 className="text-xs font-bold uppercase tracking-wider text-muted">Trust & Legal</h5>
+            <h5 className="text-xs font-bold uppercase tracking-wider text-muted">{t('trustAndLegal')}</h5>
             <ul className="space-y-2 text-xs font-medium">
+              <li>
+                <Link href="/about" className="text-text hover:text-primary dark:hover:text-accent transition-colors font-semibold flex items-center gap-1">
+                  <span>{t('about')}</span>
+                  <ArrowUpRight className="w-3 h-3 opacity-60" />
+                </Link>
+              </li>
               <li>
                 <Link href="/terms" className="text-text hover:text-primary dark:hover:text-accent transition-colors">
                   Terms of Service
@@ -158,12 +170,66 @@ export function Footer() {
           </div>
         </div>
 
-        {/* Bottom Attribution */}
-        <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-muted">
-          <p>© {new Date().getFullYear()} RaddiBhaav Technologies Pvt Ltd. All rights reserved.</p>
-          <p className="text-[11px] text-muted">
-            Designed for households and kabadiwalas across Mumbai, Pune, Nashik and beyond.
-          </p>
+        {/* Bottom Attribution & Creator Credit */}
+        <div id="footer-creator-credit" className="pt-8 flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-muted">
+          <div className="flex flex-col items-center md:items-start gap-1 text-center md:text-left">
+            <p className="font-normal text-text/80">
+              © {currentYear} {SITE_CONFIG.name}. {t('allRightsReserved')}
+            </p>
+            <div className="flex flex-wrap items-center justify-center md:justify-start gap-2 pt-0.5">
+              <span className="text-muted">
+                {t('designedAndDevelopedBy')}{' '}
+                <a
+                  href={SITE_CONFIG.links.linkedin}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="font-semibold text-text hover:text-primary dark:hover:text-accent transition-colors underline decoration-dotted underline-offset-4"
+                >
+                  {SITE_CONFIG.creator.name}
+                </a>
+              </span>
+              <div className="inline-flex items-center gap-1">
+                <a
+                  href={SITE_CONFIG.links.linkedin}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center justify-center w-6 h-6 rounded-md hover:bg-primary-tint/60 hover:text-primary dark:hover:text-accent transition-all text-muted"
+                  aria-label={`${SITE_CONFIG.creator.name} on LinkedIn`}
+                  title="LinkedIn Profile"
+                >
+                  <LinkedInIcon className="w-3.5 h-3.5" />
+                </a>
+                <a
+                  href={SITE_CONFIG.links.github}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center justify-center w-6 h-6 rounded-md hover:bg-primary-tint/60 hover:text-primary dark:hover:text-accent transition-all text-muted"
+                  aria-label={`${SITE_CONFIG.creator.name} on GitHub`}
+                  title="GitHub Profile"
+                >
+                  <GitHubIcon className="w-3.5 h-3.5" />
+                </a>
+              </div>
+              <span className="text-border dark:text-border/40">•</span>
+              <span className="text-[11px] text-muted font-medium">
+                {t('madeInNashik')}
+              </span>
+            </div>
+          </div>
+
+          <div className="flex items-center gap-4 text-[11px] text-muted">
+            <Link href="/about" className="hover:text-primary dark:hover:text-accent transition-colors">
+              {t('about')}
+            </Link>
+            <span>•</span>
+            <Link href="/terms" className="hover:text-primary dark:hover:text-accent transition-colors">
+              Terms
+            </Link>
+            <span>•</span>
+            <Link href="/privacy" className="hover:text-primary dark:hover:text-accent transition-colors">
+              Privacy
+            </Link>
+          </div>
         </div>
       </div>
     </footer>

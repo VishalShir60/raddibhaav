@@ -1,0 +1,8 @@
+/* TEAM */
+Founder & Developer: Vishal Shirsath
+Site: https://www.linkedin.com/in/vishal-shirsath-6138792ab
+Location: Nashik, India
+
+/* SITE */
+Name: RaddiBhaav
+Stack: Next.js, Supabase, Tailwind

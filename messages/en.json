@@ -14,7 +14,8 @@
     "language": "Language",
     "selectRole": "Select Role",
     "sellerRole": "Household / Seller",
-    "dealerRole": "Kabadiwala / Dealer"
+    "dealerRole": "Kabadiwala / Dealer",
+    "about": "About"
   },
   "hero": {
     "title": "Kabadi ka sahi bhaav. Don't sell scrap for peanuts!",
@@ -379,5 +380,14 @@
     "listingsPerDay": "Listings / Day (Avg)",
     "bidSpread": "Average Bid Spread (Min vs Max)",
     "commissionWaived": "Commission Waived in MVP"
+  },
+  "footer": {
+    "allRightsReserved": "All rights reserved.",
+    "designedAndDevelopedBy": "Designed & developed by",
+    "madeInNashik": "Made in Nashik, India",
+    "about": "About RaddiBhaav",
+    "marketplace": "Marketplace",
+    "dealerPartners": "Dealer Partners",
+    "trustAndLegal": "Trust & Legal"
   }
 }
